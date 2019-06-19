@@ -27,3 +27,30 @@ SELECT a~CARRID, A~CONNID,
              AND a-connid = b-connid
          WHERE CARRID = 'AA'.
          
+
+SELECT a~carrid, a~connid,
+       b~custtype 
+       FROM sflight As a LEFT OUTER JOIN sbook as b
+       ON a~carrid = b~carrid
+       AND a~connid = b~connid
+       WHERE CARRID = 'AA'.
+       
+ 
+ CREATE TABLE 'TAB1' (
+  Name1 varchar(10),
+  Code int);  
+    
+  INSERT INTO TAB1 
+  VALUES ( 'A' , '1') ;
+  
+  SELECT tab1.Name1, tab1.code, tab2.Name2
+FROM tab1 INNER JOIN TAB2 
+ON tab1.code = tab2.code ;
+
+SELECT tab1.Name1, tab1.code, tab2.Name2
+FROM tab1 LEFT OUTER JOIN TAB2 
+ON tab1.code = tab2.code ;
+
+
+  
+         
