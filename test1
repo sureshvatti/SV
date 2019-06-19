@@ -1,0 +1,29 @@
+SELECT carrid  
+FROM sflight
+INTO TABLE @DATA(IT_CARRID)
+WHERE CARRID = 'AA'.
+
+SELECT carrid  
+UPTO 3 ROWS
+FROM sflight
+INTO TABLE @DATA(IT_CARRID)
+WHERE CARRID = 'AA'.
+
+SELECT FLDATE
+FROM sflight
+INTO TABLE @DATA(It)
+WHERE CARRID = 'AA'
+ORDER BY FLDATE DESCENDING.
+
+SELECT COUNT(*) carrid
+FROM sflight
+INTO TABLE @DATA(IT)
+GROUP BY 'CARRID'
+
+SELECT a~CARRID, A~CONNID,
+        b~custtype
+        FROM sflight AS a INNER JOIN sbook AS b 
+             ON a-CARRID = b-CARRID
+             AND a-connid = b-connid
+         WHERE CARRID = 'AA'.
+         
